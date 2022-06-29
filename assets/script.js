@@ -8,7 +8,7 @@ dt.innerHTML = moment().format('YYYY-MM-DD h:mm:ss');
 
  
 //coloring
-const timenine = $('#timenine');
+const time0 = $('#time0');
 const timeten = $('#timeten');
 const timeeleven = $('#timeeleven');
 const timetwelve = $('#timetwelve');
@@ -19,13 +19,13 @@ const timefour = $('#timefour');
 const timefive = $('#timefive');
 
 if(currenthour > 9) {
-    timenine.addClass("past");
+    time0.addClass("past");
 }
 else if(currenthour = 9) {
-    timenine.addClass("present");
+    time0.addClass("present");
 }
 else if(currenthour < 9) {
-    timenine.addClass("future");
+    time0.addClass("future");
 }
 
 if(currenthour > 10) {
@@ -109,6 +109,7 @@ else if(currenthour < 17) {
 }
 
 //saving
+
 //$("#saveBtn").on("click",function(e) {
     //e.preventDefault();
     //var input = $("#savBtn").val();
@@ -116,14 +117,28 @@ else if(currenthour < 17) {
 
 //})
 
-document.getElementById("timenine").innerHTML="";
+document.getElementById("time0").innerHTML="";
 
 
 //notification
-const btn = document.getElementById('saveBtn');
+const btn = document.querySelectorAll('.saveBtn');
 const note = document.getElementById('note');
+console.log(btn)
+for (let i = 0; i < btn.length; i++) {
+    console.log(btn[i])    
 
-btn.addEventListener('click', function() {
-    const text = 'Appointment has been saved!';
-    note.innerHTML=text;
-})
+    document.getElementById(`time${i}`).value = localStorage.getItem(`time${i}`)
+
+
+    btn[i].addEventListener('click', function(event) {
+        // const text = 'Appointment has been saved!';
+        // note.innerHTML=text;
+        console.log('farm')
+        console.log(document.getElementById(event.target.getAttribute("data-hour")).value)
+        console.log(event.target.getAttribute("data-hour"))
+        localStorage.setItem(event.target.getAttribute("data-hour"), document.getElementById(event.target.getAttribute("data-hour")).value)
+    })
+}
+
+
+// save text DOM 
