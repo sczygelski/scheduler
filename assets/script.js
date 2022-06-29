@@ -1,16 +1,24 @@
-$("09").val(09)
+var currenthour=moment().format('HH');
+    console.log(currenthour)
 
 let dt = document.getElementById("currentDay");
 dt.innerHTML = moment().format('YYYY-MM-DD h:mm:ss');
 
  
 //coloring
-
-    var hr = moment().hour();
-        if(hr>9) {
-            console.log("works");
+//for (let i=0; i === currenthour.length; i++) {
+    if(currenthour > 12) {
+        const time = $('#time');
+        console.log("works");
+        time.addClass("future")
+    }
+//}
+    //var hr = moment().hour();
+      //  if(hr>9) {
+        //    console.log("works");
             //$('#timecomp').addClass("future");
-        }
+       //     $(hr).addClass("future");
+        //}
 
 
 //saving
