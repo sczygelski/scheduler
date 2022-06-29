@@ -107,10 +107,11 @@ else if(currenthour < 17) {
 }
 
 //saving
-$("#saveBtn").on("click",function(e) {
-    e.preventDefault();
-    var input = $("#savBtn").val();
-    console.log(input);
+//$("#saveBtn").on("click",function(e) {
+    //e.preventDefault();
+    //var input = $("#savBtn").val();
+    //console.log(input);
 
-})
+//})
 
+document.getElementById("timenine").innerHTML="";
