@@ -4,6 +4,8 @@ var currenthour=moment().format('HH');
 let dt = document.getElementById("currentDay");
 dt.innerHTML = moment().format('YYYY-MM-DD h:mm:ss');
 
+
+
  
 //coloring
 const timenine = $('#timenine');
@@ -115,3 +117,13 @@ else if(currenthour < 17) {
 //})
 
 document.getElementById("timenine").innerHTML="";
+
+
+//notification
+const btn = document.getElementById('saveBtn');
+const note = document.getElementById('note');
+
+btn.addEventListener('click', function() {
+    const text = 'Appointment has been saved!';
+    note.innerHTML=text;
+})
