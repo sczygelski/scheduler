@@ -128,8 +128,14 @@ for (let i = 0; i < btn.length; i++) {
     document.getElementById(`time${i}`).value = localStorage.getItem(`time${i}`)
     btn[i].addEventListener('click', function(event) {
         localStorage.setItem(event.target.getAttribute("data-hour"), document.getElementById(event.target.getAttribute("data-hour")).value)
+        const note = document.getElementById('note');
+    const text = 'Appointment has been saved!';
+    note.innerHTML=text;
     })
 }
+
+
+
 
 
 // save text DOM 
